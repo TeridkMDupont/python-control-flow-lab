@@ -97,16 +97,54 @@ def check_letter():
 # - Convert the string input to an integer using `int()`.
 # - Apply conditional logic to perform the correct age calculation based on the dog's age.
 
-def calculate_dog_years():
+# def calculate_dog_years():
+#     # Your control flow logic goes here
+#     dog_age_input = int(input("Input a dog's age: "))
+
+#     if dog_age_input <= 2:
+#         dog_age = dog_age_input * 10
+#     else:
+#         dog_age = 7*(dog_age_input - 2)+ 20
+
+#         print(f"The dog is {dog_age} years old.")
+
+# # Call the function
+# calculate_dog_years()
+
+
+
+# Exercise 4: Weather Advice
+#
+# Write a Python script named `weather_advice` that provides clothing advice based on weather conditions.
+#
+# Requirements:
+# - The script should prompt the user to enter if it is cold (yes/no).
+# - Then, ask if it is raining (yes/no).
+# - Use logical operators to determine clothing advice:
+#   - If it is cold AND raining, print "Wear a waterproof coat."
+#   - If it is cold BUT NOT raining, print "Wear a warm coat."
+#   - If it is NOT cold but raining, print "Carry an umbrella."
+#   - If it is NOT cold AND NOT raining, print "Wear light clothing."
+#
+# Hints:
+# - Use logical operators (`AND`, `OR`, `NOT`) in your if statements to handle multiple conditions.
+
+def weather_advice():
     # Your control flow logic goes here
-    dog_age_input = int(input("Input a dog's age: "))
+    cold = input("Is it cold? (yes/no): ").strip().lower()
+    raining = input("Is it raining? (yes/no): ").strip().lower()
+    # I got the strip and lowermethods from Chatgpt
+    is_cold = cold == "yes"
+    is_raining = raining == "yes"
 
-    if dog_age_input <= 2:
-        dog_age = dog_age_input * 10
+    if is_cold and is_raining:
+        print("Wear a waterproof  coat!")
+    elif is_cold and not is_raining:
+        print("Wear a warm coat.")
+    elif not is_cold and is_raining:
+        print("Carry an umbrella!")
     else:
-        dog_age = 7*(dog_age_input - 2)+ 20
-
-        print(f"The dog is {dog_age} years old.")
+        print("Wear a light clothing.")
 
 # Call the function
-calculate_dog_years()
+weather_advice()
