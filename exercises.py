@@ -61,19 +61,52 @@ def check_letter():
 # - Use `int()` to convert the input to an integer. Ensure to handle any conversion errors gracefully.
 # - Use a conditional statement to check if the age meets the minimum voting age requirement.
 
-def check_voting_eligibility():
-    # Your control flow logic goes here
-    voting_age = 18
+# def check_voting_eligibility():
+#     # Your control flow logic goes here
+#     voting_age = 18
 
-    age_input = int(input("Please enter your age: "))
+#     age_input = int(input("Please enter your age: "))
     
-    if age_input < 0:
-        print("Age can't be negative! Please try agian.")
+#     if age_input < 0:
+#         print("Age can't be negative! Please try agian.")
 
-    elif age_input >= voting_age:
-        print("You're eligible to vote!") 
+#     elif age_input >= voting_age:
+#         print("You're eligible to vote!") 
+#     else:
+#         print("You're not old enough to vote yet.")
+
+# # Call the function
+# check_voting_eligibility()
+
+
+# Exercise 3: Calculate Dog Years
+#
+# Write a Python function named `calculate_dog_years` that calculates a dog's age in dog years.
+# Fill in the logic to perform the calculation inside the function.
+#
+# Function Details:
+# - Prompt the user to enter a dog's age: "Input a dog's age: "
+# - Calculate the dog's age in dog years:
+#      - The first two years of the dog's life count as 10 dog years each.
+#      - Each subsequent year counts as 7 dog years.
+# - Print the calculated age: "The dog's age in dog years is xx."
+# - Replace 'xx' with the calculated dog years.
+#
+# Hints:
+# - Use the `input()` function to capture user input.
+# - Convert the string input to an integer using `int()`.
+# - Apply conditional logic to perform the correct age calculation based on the dog's age.
+
+def calculate_dog_years():
+    # Your control flow logic goes here
+    dog_age_input = int(input("Input a dog's age: "))
+
+    if dog_age_input <= 2:
+        dog_age = dog_age_input * 10
     else:
-        print("You're not old enough to vote yet.")
+        dog_age = 7*(dog_age_input - 2)+ 20
+
+        print(f"The dog is {dog_age} years old.")
 
 # Call the function
-check_voting_eligibility()
+calculate_dog_years()
