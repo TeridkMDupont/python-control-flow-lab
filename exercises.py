@@ -129,22 +129,67 @@ def check_letter():
 # Hints:
 # - Use logical operators (`AND`, `OR`, `NOT`) in your if statements to handle multiple conditions.
 
-def weather_advice():
-    # Your control flow logic goes here
-    cold = input("Is it cold? (yes/no): ").strip().lower()
-    raining = input("Is it raining? (yes/no): ").strip().lower()
-    # I got the strip and lowermethods from Chatgpt
-    is_cold = cold == "yes"
-    is_raining = raining == "yes"
+# def weather_advice():
+#     # Your control flow logic goes here
+#     cold = input("Is it cold? (yes/no): ").strip().lower()
+#     raining = input("Is it raining? (yes/no): ").strip().lower()
+#     # I got the strip and lowermethods from Chatgpt
+#     is_cold = cold == "yes"
+#     is_raining = raining == "yes"
 
-    if is_cold and is_raining:
-        print("Wear a waterproof  coat!")
-    elif is_cold and not is_raining:
-        print("Wear a warm coat.")
-    elif not is_cold and is_raining:
-        print("Carry an umbrella!")
+#     if is_cold and is_raining:
+#         print("Wear a waterproof  coat!")
+#     elif is_cold and not is_raining:
+#         print("Wear a warm coat.")
+#     elif not is_cold and is_raining:
+#         print("Carry an umbrella!")
+#     else:
+#         print("Wear a light clothing.")
+
+# # Call the function
+# weather_advice()
+
+
+
+# Exercise 5: What's the Season?
+#
+# Write a Python function named `determine_season` that figures out the season based on the entered date.
+#
+# Requirements:
+# - The function should first prompt the user to enter the month (as three characters): "Enter the month of the year (Jan - Dec):"
+# - Then, the function should prompt the user to enter the day of the month: "Enter the day of the month:"
+# - Determine the current season based on the date:
+#      - Dec 21 - Mar 19: Winter
+#      - Mar 20 - Jun 20: Spring
+#      - Jun 21 - Sep 21: Summer
+#      - Sep 22 - Dec 20: Fall
+# - Print the season for the entered date in the format: "<Mmm> <dd> is in <season>."
+#
+# Hints:
+# - Use 'in' to check if a string is in a list or tuple.
+# - Adjust the season based on the day of the month when needed.
+# - Ensure to validate input formats and handle unexpected inputs gracefully.
+
+def determine_season():
+    # Your control flow logic goes here
+    valid_months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun","Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]
+
+    month_input = input("Enter the month of the year (Jan - Dec): ").strip()
+    day_input = int(input("Enter the day of the month. "))
+
+    if day_input < 1 or day_input > 31:
+        print("Day must be between 1 and 31")
+
+    if (month_input in ["Dec"] and day_input >= 21) or (month_input in ["Jan", "Feb"]) or (month_input == "Mar" and day_input <= 19):
+        season = "Winter"
+    elif (month_input == "Mar" and day_input >= 20) or (month_input in ["Apr", "May"]) or (month_input == "Jun" and day_input <= 20):
+        season = "Spring"
+    elif (month_input == "Jun" and day_input >= 21) or (month_input in ["Jul", "Aug"]) or (month_input == "Sep" and day_input <= 21):
+        season = "Summer"
     else:
-        print("Wear a light clothing.")
+        season = "Fall"
+
+    print(f"{month_input} {day_input} is in {season}.")
 
 # Call the function
-weather_advice()
+determine_season()
