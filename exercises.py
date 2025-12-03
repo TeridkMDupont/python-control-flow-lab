@@ -40,7 +40,7 @@ print_greeting()
 def check_letter():
     # Your control flow logic goes here
     letter_input = input("Enter a letter (a-z or A-Z): ").strip().lower()
-    # I got the strip and lowermethods from Chatgpt
+    # I got the strip and lower methods from Chatgpt
     vowels = ["a", "e", "i", "o", "u"]
 
     if letter_input in vowels:
