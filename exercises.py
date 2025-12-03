@@ -39,9 +39,18 @@ print_greeting()
 
 def check_letter():
     # Your control flow logic goes here
+    letter_input = input("Enter a letter (a-z or A-Z): ").strip().lower()
+    # I got the strip and lowermethods from Chatgpt
+    vowels = ["a", "e", "i", "o", "u"]
+
+    if letter_input in vowels:
+        print(f"The letter {letter_input} is a vowel.")
+    else:
+        print(f"The letter {letter_input} is a consonant.")
+
 
 # Call the function
-  check_letter()
+check_letter()
 
 
 
@@ -133,7 +142,7 @@ def check_letter():
 #     # Your control flow logic goes here
 #     cold = input("Is it cold? (yes/no): ").strip().lower()
 #     raining = input("Is it raining? (yes/no): ").strip().lower()
-#     # I got the strip and lowermethods from Chatgpt
+#     
 #     is_cold = cold == "yes"
 #     is_raining = raining == "yes"
 
@@ -170,26 +179,26 @@ def check_letter():
 # - Adjust the season based on the day of the month when needed.
 # - Ensure to validate input formats and handle unexpected inputs gracefully.
 
-def determine_season():
-    # Your control flow logic goes here
-    valid_months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun","Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]
+# def determine_season():
+#     # Your control flow logic goes here
+#     valid_months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun","Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]
 
-    month_input = input("Enter the month of the year (Jan - Dec): ").strip()
-    day_input = int(input("Enter the day of the month. "))
+#     month_input = input("Enter the month of the year (Jan - Dec): ").strip()
+#     day_input = int(input("Enter the day of the month. "))
 
-    if day_input < 1 or day_input > 31:
-        print("Day must be between 1 and 31")
+#     if day_input < 1 or day_input > 31:
+#         print("Day must be between 1 and 31")
 
-    if (month_input in ["Dec"] and day_input >= 21) or (month_input in ["Jan", "Feb"]) or (month_input == "Mar" and day_input <= 19):
-        season = "Winter"
-    elif (month_input == "Mar" and day_input >= 20) or (month_input in ["Apr", "May"]) or (month_input == "Jun" and day_input <= 20):
-        season = "Spring"
-    elif (month_input == "Jun" and day_input >= 21) or (month_input in ["Jul", "Aug"]) or (month_input == "Sep" and day_input <= 21):
-        season = "Summer"
-    else:
-        season = "Fall"
+#     if (month_input in ["Dec"] and day_input >= 21) or (month_input in ["Jan", "Feb"]) or (month_input == "Mar" and day_input <= 19):
+#         season = "Winter"
+#     elif (month_input == "Mar" and day_input >= 20) or (month_input in ["Apr", "May"]) or (month_input == "Jun" and day_input <= 20):
+#         season = "Spring"
+#     elif (month_input == "Jun" and day_input >= 21) or (month_input in ["Jul", "Aug"]) or (month_input == "Sep" and day_input <= 21):
+#         season = "Summer"
+#     else:
+#         season = "Fall"
 
-    print(f"{month_input} {day_input} is in {season}.")
+#     print(f"{month_input} {day_input} is in {season}.")
 
-# Call the function
-determine_season()
+# # Call the function
+# determine_season()
